@@ -1,0 +1,125 @@
+[index.html](https://github.com/user-attachments/files/29143571/index.html)
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandro Piscedda - Immobiliare & Costruzioni</title>
+    <style>
+        /* Reset e Stili Generali (Premium Dark) */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #0a0a0a; color: #e0e0e0; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow-x: hidden; padding: 20px; text-align: center; }
+        
+        /* Contenitore Principale con effetto Silver/Glossy */
+        .container { max-width: 900px; width: 100%; padding: 45px 25px; background: linear-gradient(135deg, #111111 0%, #181818 100%); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.9), inset 0 1px 2px rgba(255,255,255,0.1); position: relative; }
+        
+        /* Linea d'Argento Decorativa Superiore */
+        .container::before { content: ''; position: absolute; top: 0; left: 10%; width: 80%; height: 2px; background: linear-gradient(90deg, transparent, #b0b3b8, #ffffff, #b0b3b8, transparent); }
+
+        /* Scritta in Evidenza "Sito in Allestimento" */
+        .status-tag { display: inline-block; padding: 6px 18px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.15); border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: #d1d5db; margin-bottom: 35px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+
+        /* Intestazione Principale Argento */
+        h1 { font-size: 2.6rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; background: linear-gradient(180deg, #ffffff 0%, #999da3 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { font-size: 1.1rem; color: #8a8d93; text-transform: uppercase; letter-spacing: 5px; margin-bottom: 40px; font-weight: 500; }
+        
+        /* Griglia dei 4 Pilastri del Banner */
+        .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 650px; margin: 0 auto 40px auto; }
+        @media (min-width: 640px) { .features-grid { grid-template-columns: repeat(4, 1fr); } }
+        
+        .feature-item { background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.04); padding: 22px 10px; border-radius: 8px; transition: all 0.3s ease; }
+        .feature-item:hover { border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.03); transform: translateY(-3px); }
+        .feature-item svg { width: 34px; height: 34px; fill: none; stroke: #a6a9af; stroke-width: 1.2; margin-bottom: 12px; }
+        .feature-item p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #b5b5b5; font-weight: 600; }
+
+        /* Badge Storico: Dal 2009 */
+        .history-badge { font-size: 1rem; color: #777; letter-spacing: 4px; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 40px; }
+        .history-badge::before, .history-badge::after { content: ''; width: 35px; height: 1px; background: rgba(255,255,255,0.15); }
+        .history-badge span { color: #ffffff; font-weight: bold; }
+
+        /* Testo Informativo */
+        .notice-text { font-size: 1.05rem; color: #b0b0b0; max-width: 580px; margin: 0 auto 40px auto; line-height: 1.7; font-weight: 300; }
+
+        /* Pulsanti di Contatto */
+        .cta-group { display: flex; flex-direction: column; gap: 15px; max-width: 420px; margin: 0 auto; }
+        @media (min-width: 480px) { .cta-group { flex-direction: row; } }
+
+        .btn { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 24px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Stile Bottone WhatsApp (Verde Scuro Integrato) */
+        .btn-whatsapp { background: #075e54; color: #ffffff; border: 1px solid #128c7e; }
+        .btn-whatsapp:hover { background: #128c7e; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(18,140,126,0.3); }
+        
+        /* Stile Bottone Email (Silver Metallico) */
+        .btn-email { background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.25); }
+        .btn-email:hover { background: #ffffff; color: #0a0a0a; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255,255,255,0.15); }
+
+        /* Footer */
+        footer { margin-top: 45px; font-size: 0.75rem; color: #444; letter-spacing: 1px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Stato -->
+        <div class="status-tag">Sito in allestimento</div>
+        
+        <!-- Intestazione principale -->
+        <h1>Sandro Piscedda</h1>
+        <div class="subtitle">Immobiliare & Costruzioni</div>
+
+        <!-- Griglia dei 4 settori presi dall'immagine -->
+        <div class="features-grid">
+            <!-- Immobiliare -->
+            <div class="feature-item">
+                <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+                <p>Immobiliare</p>
+            </div>
+            <!-- Costruzioni -->
+            <div class="feature-item">
+                <svg viewBox="0 0 24 24"><path d="M3 21h18M19 21v-4a2 2 0 00-2-2H7a2 2 0 00-2 2v4M12 3v12"/></svg>
+                <p>Costruzioni</p>
+            </div>
+            <!-- Tecnologie -->
+            <div class="feature-item">
+                <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                <p>Tecnologie</p>
+            </div>
+            <!-- Servizi -->
+            <div class="feature-item">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                <p>Servizi</p>
+            </div>
+        </div>
+
+        <!-- Storico dell'azienda -->
+        <div class="history-badge">? Dal <span>2009</span> ?</div>
+
+        <!-- Messaggio allestimento -->
+        <p class="notice-text">
+            Stiamo rinnovando la nostra piattaforma digitale per offrirvi un'esperienza online allineata ai nostri standard tecnici e di efficienza. I nostri uffici rimangono pienamente operativi.
+        </p>
+
+        <!-- Collegamenti Diretti WhatsApp & Email -->
+        <div class="cta-group">
+            <!-- Sostituisci il numero dopo / con il tuo numero WhatsApp reale -->
+            <a href="https://wa.me/393488405268" class="btn btn-whatsapp" target="_blank">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="margin-right:5px;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.498 1.451 5.438 1.453 5.441 0 9.865-4.422 9.869-9.866.002-2.637-1.023-5.116-2.883-6.978C17.212 1.8 14.74 .778 12.105.778 6.666.778 2.241 5.201 2.237 10.643c-.001 1.932.504 3.821 1.464 5.425l-.993 3.624 3.71-.973zm11.567-7.373c-.303-.152-1.793-.883-2.058-.979-.266-.096-.459-.144-.653.146-.193.289-.748.93-.917 1.122-.168.193-.337.217-.64.066-1.343-.672-2.226-1.182-3.111-2.703-.233-.401.233-.372.668-1.24.075-.152.038-.285-.019-.399-.057-.114-.459-1.106-.63-1.514-.165-.402-.349-.346-.48-.352l-.41-.008c-.141 0-.372.053-.566.267-.194.214-.741.724-.741 1.765 0 1.041.756 2.046.862 2.19.106.145 1.488 2.273 3.606 3.185.504.217.897.347 1.206.445.507.162.968.139 1.333.085.407-.06 1.793-.733 2.048-1.446.256-.713.256-1.325.181-1.446-.075-.121-.266-.194-.569-.346z"/></svg>
+                WhatsApp
+            </a>
+            <!-- Sostituisci l'email con la tua email aziendale reale -->
+            <a href="mailto:sandropiscedda1987@gmail.com" class="btn btn-email">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right:5px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+                Invia Email
+            </a>
+        </div>
+
+        <footer>
+            &copy; 2026 Sandro Piscedda. All rights reserved.
+        </footer>
+
+    </div>
+
+</body>
+</html>
